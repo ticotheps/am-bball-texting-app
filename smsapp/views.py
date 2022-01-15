@@ -21,3 +21,6 @@ def broadcast_sms(request):
     return HttpResponse("Messages sent!", 200)
 
 
+def incoming_sms(request):
+    return HttpResponse("Message received!", 200)
+
