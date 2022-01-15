@@ -26,7 +26,11 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['localhost', 'localhost:8000']
+ALLOWED_HOSTS = [
+    'localhost',
+    'localhost:8000',
+    '3823-24-128-183-4.ngrok.io',
+]
 
 TWILIO_ACCOUNT_SID=config('TWILIO_ACCOUNT_SID')
 TWILIO_AUTH_TOKEN=config('TWILIO_AUTH_TOKEN')
