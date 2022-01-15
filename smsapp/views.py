@@ -14,9 +14,12 @@ def broadcast_sms(request):
     
     for recipient in settings.SMS_BROADCAST_TO_NUMBERS:
         if recipient:
-            client.messages.create(to=recipient,
-                                   from_=settings.TWILIO_NUMBER,
-                                   body=message_to_broadcast)
+            message = client.messages.create(
+                messaging_service_sid='MGf5b2994ff3d64b469a96bfb7921699ed',
+                body=message_to_broadcast,
+                to=recipient,
+            )
+            print(message.sid)
             
     return HttpResponse("Messages sent!", 200)
 
